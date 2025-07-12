@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+
+/* eskiden tailwind config dosyasında yaptığımız değişiklikleri artık theme içinde yapıyoruz */
+@theme {
+  --font-poppins: "Poppins", "sans-serif";
+}
+@layer base {
+  body {
+    @apply bg-[#242424] text-white min-h-screen;
+  }
+}
+ /* kendi classlarımız */
+ @layer components {
+  .wrapper {
+    @apply h-screen w-full grid place-items-center;
+  }
+
+.box{
+  @apply bg-white text-gray-500 p-[50px_60px] 
+  rounded-[10px] w-[80vw] max-w-[500px];
+}
+
+.btn{
+  @apply bg-black p-2 px-4 text-white rounded-md text-sm transition hover:bg-black/80
+
+}
+
+}
