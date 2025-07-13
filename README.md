@@ -12,5 +12,5 @@ A real-time chat application inspired by WhatsApp, built using **React**, **Vite
 -📱 Responsive and mobile-friendly design 
 
 
-#a short gif about project
+#gif 
 ![ezgif-16af353834310f](https://github.com/user-attachments/assets/ac913241-98c6-4978-9bd6-5514fa84377a)
