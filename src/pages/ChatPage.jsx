@@ -8,7 +8,7 @@ const ChatPage = ({room, setRoom}) => {
    md:max-w-[600px] h-screen md:h-[80vh] md:rounded-md overflow-hidden flex flex-col">
     <Header room={room} setRoom={setRoom}/>
 
-    <Main /> 
+    <Main room={room} /> 
                                
     <Form room={room} />
       

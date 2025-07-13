@@ -2,7 +2,7 @@ const Loader = () => {
   return (
     <div className="wrapper">
       <div className="box h-[450px] grid place-items-center">
-        <div class="text-center">
+        <div className="text-center">
           <div role="status">
             <svg
               aria-hidden="true"

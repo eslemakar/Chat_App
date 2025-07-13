@@ -10,20 +10,26 @@
     @apply bg-[#242424] text-white min-h-screen;
   }
 }
- /* kendi classlarımız */
- @layer components {
+/* kendi classlarımız */
+@layer components {
   .wrapper {
     @apply h-screen w-full grid place-items-center;
   }
 
-.box{
-  @apply bg-white text-gray-500 p-[50px_60px] 
+  .box {
+    @apply bg-white text-gray-500 p-[50px_60px] 
   rounded-[10px] w-[80vw] max-w-[500px];
-}
+  }
 
-.btn{
-  @apply bg-black p-2 px-4 text-white rounded-md text-sm transition hover:bg-black/80
-
-}
-
+  .btn {
+    @apply bg-black p-2 px-4 text-white rounded-md text-sm transition hover:bg-black/80;
+  }
+  .message {
+    padding: 2px 8px;
+    max-width: 90%;
+    width: fit-content;
+   overflow-wrap: break-word;
+   word-wrap: break-word;
+   white-space: normal;
+  }
 }

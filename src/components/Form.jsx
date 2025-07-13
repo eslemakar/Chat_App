@@ -4,7 +4,7 @@ import { addDoc,collection,serverTimestamp } from "firebase/firestore";
 import { db, auth } from "../firebase";
 
 const Form = ({ room }) => {
-  const [text, setText] = useState();
+  const [text, setText] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -12,27 +12,36 @@ const Form = ({ room }) => {
     if (text.trim() === "") return;
     //referans
     const collectionRef = collection(db, "messages");
-
+    // inputu sıfırla / modal'ı kapat
+    setText("");
+    setIsOpen(false);
     await addDoc(collectionRef, {
       text,
       room,
       author: {
         id: auth.currentUser.uid,
         name: auth.currentUser.displayName,
-        photo: auth.currentUser.photoURL,
+        photo: auth.currentUser.photoURL?.trim() || "/woman.jpg",
+
       },
       createdAt: serverTimestamp(),
     });
+     //formu temizle
+     setText("");
+     setIsOpen(false);
+
+
+
   };
   return (
     <form
       onSubmit={handleSubmit}
       className="p-5 border border-gray-200 shadow-lg flex justify-center gap-3 relative"
     >
-      <input
+      <input value={text}
         type="text"
         placeholder="Mesajınızı yazınız"
-        className="border border-gray-200 shadow-sm p-2 px-4 rounded-md-w-1/2"
+        className="border border-gray-200 shadow-sm p-2 px-4 rounded-md w-1/2"
         onChange={(e) => setText(e.target.value)}
       />
       <div>
@@ -43,7 +52,8 @@ const Form = ({ room }) => {
           />
         </div>
           
-        <button onClick={() => setIsOpen(!isOpen)} className="btn text-base">
+        <button type="button"
+        onClick={() => setIsOpen(!isOpen)} className="btn text-base">
           😃
         </button>
       </div>
